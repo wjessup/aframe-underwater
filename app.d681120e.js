@@ -170,19 +170,19 @@ Object(__WEBPACK_IMPORTED_MODULE_2_react_dom__["render"])(__WEBPACK_IMPORTED_MOD
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return App; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_css__ = __webpack_require__("Ue/Q");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__App_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_aframe__ = __webpack_require__("mmUs");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_aframe___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_aframe__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_aframe_animation_component__ = __webpack_require__("SLdq");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_aframe_animation_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_aframe_animation_component__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_aframe_particle_system_component__ = __webpack_require__("Jh/W");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_aframe_particle_system_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_aframe_particle_system_component__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_babel_polyfill__ = __webpack_require__("j1ja");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_babel_polyfill___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_babel_polyfill__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_aframe_react__ = __webpack_require__("VrZj");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_aframe_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_aframe_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_hologram__ = __webpack_require__("/lgD");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react__ = __webpack_require__("GiK3");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("GiK3");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_aframe__ = __webpack_require__("mmUs");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_aframe___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_aframe__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_aframe_animation_component__ = __webpack_require__("SLdq");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_aframe_animation_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_aframe_animation_component__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_aframe_particle_system_component__ = __webpack_require__("Jh/W");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_aframe_particle_system_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_aframe_particle_system_component__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_babel_polyfill__ = __webpack_require__("j1ja");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_babel_polyfill___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_babel_polyfill__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_aframe_react__ = __webpack_require__("VrZj");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_aframe_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_aframe_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_hologram__ = __webpack_require__("/lgD");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -200,94 +200,75 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var _ref = __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
-  'h1',
-  null,
-  'hi'
+var lock = false;
+
+var _ref = __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+  'a-scene',
+  { fog: 'type: linear; color: #000; far: 50;' },
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+    'a-assets',
+    null,
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'lizard', src: '../models/lizard/scene.gltf' }),
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'octopolice', src: '../models/octopolice/scene.gltf' }),
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'land', src: '../models/land/scene.gltf' })
+  ),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-gltf-model', { id: 'land-model', src: '#land', position: '0 -40 0', rotation: '0 0 0' }),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-gltf-model', { id: 'lizard-model', src: '#lizard', position: '-15 0 -30', scale: '3.0, 3.0, 3.0' }),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-sky', { color: '#121212' }),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+    'a-entity',
+    { position: '0 0 5' },
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-camera', { id: 'camera', 'wasd-controls': 'fly:true;acceleration:150;easing:15;' })
+  )
 );
 
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
 
-  function App() {
+  function App(props) {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
+    return _possibleConstructorReturn(this, _React$Component.call(this, props));
   }
+
+  App.prototype.componentDidMount = function componentDidMount() {
+
+    document.body.onkeyup = function (e) {
+      if (e.keyCode == 32) {
+        console.log(lock);
+        if (lock) return;
+
+        var els = [document.getElementById("land-model"), document.getElementById("lizard-model")];
+
+        for (var i = 0; i < els.length; i++) {
+          els[i].setAttribute("hologram", '');
+        }
+
+        var audio = new Audio('./src/audio/ping.mp3');
+        audio.play();
+        lock = true;
+        console.log(lock);
+
+        setTimeout(function () {
+          lock = false;
+          for (var i = 0; i < els.length; i++) {
+            els[i].removeAttribute("hologram");
+          }
+        }, 7000);
+      }
+    };
+  };
 
   App.prototype.render = function render() {
     return _ref;
   };
 
   return App;
-}(__WEBPACK_IMPORTED_MODULE_7_react___default.a.Component);
-
-/*
-let lock = false
-
-export default class App extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
-  componentDidMount() {
-
-    document.body.onkeyup = e => {
-      if (e.keyCode == 32) {
-        console.log(lock)
-        if (lock) return
-
-        let els = [
-          document.getElementById("land-model"),
-          document.getElementById("lizard-model")
-        ]
-
-        for( var i = 0; i < els.length; i++) {
-          els[i].setAttribute("hologram", '')
-        }
-
-        var audio = new Audio('src/audio/ping.mp3')
-        audio.play()
-        lock = true
-        console.log(lock)
-
-        setTimeout(() => {
-          lock = false
-          for( var i = 0; i < els.length; i++) {
-            els[i].removeAttribute("hologram")
-          }
-        }, 7000)
-      }
-    }
-  }
-
-  render () {
-    return (
-      <a-scene fog="type: linear; color: #000; far: 50;">
-        <a-assets>
-          <a-asset-item id="lizard" src="../models/lizard/scene.gltf"></a-asset-item>
-          <a-asset-item id="octopolice" src="../models/octopolice/scene.gltf"></a-asset-item>
-          <a-asset-item id="land" src="../models/land/scene.gltf"></a-asset-item>
-        </a-assets>
-
-        <a-gltf-model id="land-model" src="#land" position="0 -40 0" rotation="0 0 0"></a-gltf-model>
-        <a-gltf-model id="lizard-model" src="#lizard" position="-15 0 -30" scale="3.0, 3.0, 3.0"></a-gltf-model>
-
-        <a-sky color="#121212"></a-sky>
-
-        <a-entity position="0 0 5">
-          <a-camera id="camera" wasd-controls="fly:true;acceleration:150;easing:15;"></a-camera>
-        </a-entity>
-      </a-scene>
-    );
-  }
-}
-*/
-
+}(__WEBPACK_IMPORTED_MODULE_1_react___default.a.Component);
 
 
 
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.371ec3f5.js.map
+//# sourceMappingURL=app.d681120e.js.map
