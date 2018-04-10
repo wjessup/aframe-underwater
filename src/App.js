@@ -9,16 +9,9 @@ import {Entity, Scene} from 'aframe-react'
 
 import hologram from './components/hologram'
 
-export default class App extends React.Component {
-  render() {
-    return <h1>hi</h1>
-  }
-}
 
 
 
-
-/*
 let lock = false
 
 export default class App extends React.Component {
@@ -78,4 +71,3 @@ export default class App extends React.Component {
     );
   }
 }
-*/
