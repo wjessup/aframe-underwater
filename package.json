@@ -9,7 +9,8 @@
     "start": "nwb serve-react-app",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "test:watch": "nwb test-react --server",
+    "deploy": "gh-pages -d demo/dist"
   },
   "dependencies": {
     "react": "^16.3.1",
@@ -18,13 +19,16 @@
     "aframe-animation-component": "^3.2.5",
     "aframe-particle-system-component": "^1.0.8",
     "aframe-react": "^4.0.x",
+    "babel-polyfill": "^6.3.14",
     "glslify": "^6.1.1",
     "glslify-loader": "^1.0.2",
     "raw-loader": "^0.5.1",
     "react-scripts": "0.9.5"
   },
   "devDependencies": {
-    "nwb": "0.19.x"
+    "gh-pages": "^1.1.0",
+    "nwb": "0.19.x",
+    "uglifyjs-webpack-plugin": "^1.0.0-rc.0"
   },
   "author": "",
   "license": "MIT",

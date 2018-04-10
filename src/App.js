@@ -1,15 +1,24 @@
 import './App.css'
-
-import 'aframe';
-import 'aframe-animation-component';
-import 'aframe-particle-system-component';
-import 'babel-polyfill';
-
-import {Entity, Scene} from 'aframe-react';
 import React, {Component} from 'react'
+import 'aframe'
+import 'aframe-animation-component'
+import 'aframe-particle-system-component'
+import 'babel-polyfill'
+
+import {Entity, Scene} from 'aframe-react'
+
 import hologram from './components/hologram'
 
+export default class App extends React.Component {
+  render() {
+    return <h1>hi</h1>
+  }
+}
 
+
+
+
+/*
 let lock = false
 
 export default class App extends React.Component {
@@ -69,3 +78,4 @@ export default class App extends React.Component {
     );
   }
 }
+*/
