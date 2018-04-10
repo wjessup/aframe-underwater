@@ -2,7 +2,7 @@
   "name": "aframe-underwater",
   "version": "1.0.0",
   "description": "Describe aframe-underwater here",
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "nwb build-react-app",
     "clean": "nwb clean-app",
