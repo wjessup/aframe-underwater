@@ -248,7 +248,7 @@ var App = function (_React$Component) {
           els[i].setAttribute("hologram", '');
         }
 
-        var audio = new Audio('./src/audio/ping.mp3');
+        var audio = new Audio('./audio/ping.mp3');
         audio.play();
         lock = true;
         console.log(lock);
@@ -266,7 +266,7 @@ var App = function (_React$Component) {
   App.prototype.render = function render() {
     console.log(__dirname);
     console.log(__WEBPACK_IMPORTED_MODULE_8_path___default.a.basename(window.location.href));
-    //
+    //<a-asset-item id="lizard" src={'http://' + path.basename(window.location.href) + '/models/lizard/scene.gltf'} ></a-asset-item>
     return _ref;
   };
 
@@ -279,4 +279,4 @@ var App = function (_React$Component) {
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.0f1182fb.js.map
+//# sourceMappingURL=app.b6263a65.js.map
