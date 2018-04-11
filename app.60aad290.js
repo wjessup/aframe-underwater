@@ -183,8 +183,10 @@ Object(__WEBPACK_IMPORTED_MODULE_2_react_dom__["render"])(__WEBPACK_IMPORTED_MOD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_aframe_react__ = __webpack_require__("VrZj");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_aframe_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_aframe_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_hologram__ = __webpack_require__("/lgD");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_path__ = __webpack_require__("o/zv");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_path___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_path__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_aframe_extras_ocean__ = __webpack_require__("+GZZ");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_aframe_extras_ocean___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_aframe_extras_ocean__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_path__ = __webpack_require__("o/zv");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_path___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_path__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -204,25 +206,54 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 var lock = false;
 
 var _ref = __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
   'a-scene',
-  { fog: 'type: linear; color: #000; far: 50;' },
+  { fog: 'type: linear; color: #2D9CDB; far:30; ', 'keyboard-shortcuts': true, 'vr-mode-ui': true },
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
     'a-assets',
     null,
     __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'lizard', src: './models/lizard/scene.gltf' }),
     __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'octopolice', src: './models/octopolice/scene.gltf' }),
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'land', src: './models/land/scene.gltf' })
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'land', src: './models/land/scene.gltf' }),
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { id: 'skybox', src: './img/skybox1.png' })
   ),
-  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-gltf-model', { id: 'land-model', src: '#land', position: '0 -40 0', rotation: '0 0 0' }),
-  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-gltf-model', { id: 'lizard-model', src: '#lizard', position: '-15 0 -30', scale: '3.0, 3.0, 3.0' }),
-  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-sky', { color: '#121212' }),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-sky', { material: 'fog: false', src: '#skybox', 'theta-start': '0', 'theta-length': '90' }),
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
     'a-entity',
-    { position: '0 0 5' },
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-camera', { id: 'camera', 'wasd-controls': 'fly:true;acceleration:150;easing:15;' })
+    { position: '0 0 0', color: '#2D9CDB', rotation: '180 180 0' },
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+      'a-ocean',
+      { width: '500', depth: '500', density: '400' },
+      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-animation', { attribute: 'visible', delay: '25000', to: 'true' })
+    )
+  ),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+    'a-entity',
+    { position: '0 0 0', color: '#2D9CDB', rotation: '180 0 0' },
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+      'a-ocean',
+      { width: '500', depth: '500', density: '400' },
+      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-animation', { attribute: 'visible', delay: '25000', to: 'true' })
+    )
+  ),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-plane', { id: 'seaTop', position: '0 0 0', rotation: '-90 0 0', width: '2000', height: '2000', color: '#2D9CDB', scale: '15 15 15', material: '', geometry: '', visible: '' }),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-plane', { id: 'seafloorCoral', position: '0 -5 0', rotation: '-90 0 0', width: '400', height: '400', color: '#d9d0ae' }),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-plane', { id: 'mapEdgeN', position: '200 -10 0', rotation: '0 -90 0', width: '400', height: '20', color: '#d9d0ae' }),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-plane', { id: 'mapEdgeS', position: '-200 -10 0', rotation: '0 90 0', width: '400', height: '20', color: '#d9d0ae' }),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-plane', { id: 'mapEdgeE', position: '0 -10 200', rotation: '180 0 0', width: '400', height: '20', color: '#d9d0ae' }),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-plane', { id: 'mapEdgeW', position: '0 -10 -200', rotation: '0 0 0', width: '400', height: '20', color: '#d9d0ae' }),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-light', { type: 'ambient', intensity: '.1', color: '#fff', position: '0 100 0' }),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+    'a-entity',
+    { position: '0 -3 5' },
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+      'a-camera',
+      { id: 'camera', 'wasd-controls': 'fly:true; acceleration:150; easing:15;' },
+      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-light', { type: 'point', intensity: '2', color: '#fff' })
+    )
   )
 );
 
@@ -265,8 +296,22 @@ var App = function (_React$Component) {
 
   App.prototype.render = function render() {
     console.log(__dirname);
-    console.log(__WEBPACK_IMPORTED_MODULE_8_path___default.a.basename(window.location.href));
-    //<a-asset-item id="lizard" src={'http://' + path.basename(window.location.href) + '/models/lizard/scene.gltf'} ></a-asset-item>
+    console.log(__WEBPACK_IMPORTED_MODULE_9_path___default.a.basename(window.location.href));
+    //<a-scene fog="type: linear; color: #000; far: 50;">
+    //<a-gltf-model id="land-model" src="#land" position="0 -40 0" rotation="0 0 0"></a-gltf-model>
+    //<a-gltf-model id="lizard-model" src="#lizard" position="-15 0 -30" scale="3.0, 3.0, 3.0"></a-gltf-model>
+
+    // fog="type: exponential; color: #0894d3; density: 0.06;
+    //<a-cylinder color="crimson" rotation="180 0 0" position="0 0 0" height="3" radius="40"></a-cylinder>
+
+
+    /*
+    <a-ocean width="500" depth="500" density="500" color="#75705e" rotation="90 0 0" position="0 -5 0" opacity="0.1" ocean="" scale="" visible="">
+     <a-animation attribute="visible" delay="55000" to="true"></a-animation>
+    </a-ocean>
+    <a-plane id="seafloorCoral" position="0 -5 0" rotation="-90 0 0" width="4" height="4" color="#d9d0ae" scale="15 15 15" material="" geometry="" visible=""></a-plane>
+    
+    */
     return _ref;
   };
 
@@ -279,4 +324,4 @@ var App = function (_React$Component) {
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.b6263a65.js.map
+//# sourceMappingURL=app.60aad290.js.map
