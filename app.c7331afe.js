@@ -208,9 +208,9 @@ var _ref = __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
     'a-assets',
     null,
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'lizard', src: './models/lizard/scene.gltf' }),
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'octopolice', src: './models/octopolice/scene.gltf' }),
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'land', src: './models/land/scene.gltf' })
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'lizard', src: 'http:///models/lizard/scene.gltf' }),
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'octopolice', src: 'http:///models/octopolice/scene.gltf' }),
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'land', src: 'http:///models/land/scene.gltf' })
   ),
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-gltf-model', { id: 'land-model', src: '#land', position: '0 -40 0', rotation: '0 0 0' }),
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-gltf-model', { id: 'lizard-model', src: '#lizard', position: '-15 0 -30', scale: '3.0, 3.0, 3.0' }),
@@ -271,4 +271,4 @@ var App = function (_React$Component) {
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.42f724f0.js.map
+//# sourceMappingURL=app.c7331afe.js.map
