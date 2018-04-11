@@ -167,7 +167,7 @@ Object(__WEBPACK_IMPORTED_MODULE_2_react_dom__["render"])(__WEBPACK_IMPORTED_MOD
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return App; });
+/* WEBPACK VAR INJECTION */(function(__dirname) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return App; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_css__ = __webpack_require__("Ue/Q");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__App_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("GiK3");
@@ -183,11 +183,15 @@ Object(__WEBPACK_IMPORTED_MODULE_2_react_dom__["render"])(__WEBPACK_IMPORTED_MOD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_aframe_react__ = __webpack_require__("VrZj");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_aframe_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_aframe_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_hologram__ = __webpack_require__("/lgD");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_path__ = __webpack_require__("o/zv");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_path___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_path__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -208,9 +212,9 @@ var _ref = __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
     'a-assets',
     null,
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'lizard', src: 'http:///models/lizard/scene.gltf' }),
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'octopolice', src: 'http:///models/octopolice/scene.gltf' }),
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'land', src: 'http:///models/land/scene.gltf' })
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'lizard', src: './models/lizard/scene.gltf' }),
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'octopolice', src: './models/octopolice/scene.gltf' }),
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'land', src: './models/land/scene.gltf' })
   ),
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-gltf-model', { id: 'land-model', src: '#land', position: '0 -40 0', rotation: '0 0 0' }),
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-gltf-model', { id: 'lizard-model', src: '#lizard', position: '-15 0 -30', scale: '3.0, 3.0, 3.0' }),
@@ -260,6 +264,9 @@ var App = function (_React$Component) {
   };
 
   App.prototype.render = function render() {
+    console.log(__dirname);
+    console.log(__WEBPACK_IMPORTED_MODULE_8_path___default.a.basename(window.location.href));
+    //
     return _ref;
   };
 
@@ -267,8 +274,9 @@ var App = function (_React$Component) {
 }(__WEBPACK_IMPORTED_MODULE_1_react___default.a.Component);
 
 
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, "/"))
 
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.c7331afe.js.map
+//# sourceMappingURL=app.0f1182fb.js.map
