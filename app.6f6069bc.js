@@ -222,24 +222,6 @@ var _ref = __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
     __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { id: 'skybox', src: './img/skybox1.png' })
   ),
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-sky', { material: 'fog: false', position: '0 0 0', src: '#skybox', radius: '250', 'theta-start': '0', 'theta-length': '90' }),
-  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-    'a-entity',
-    { position: '0 0 0', color: '#2D9CDB', rotation: '180 180 0' },
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-      'a-ocean',
-      { width: '500', depth: '500', density: '400' },
-      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-animation', { attribute: 'visible', delay: '25000', to: 'true' })
-    )
-  ),
-  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-    'a-entity',
-    { position: '0 0 0', color: '#2D9CDB', rotation: '180 0 0' },
-    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-      'a-ocean',
-      { width: '500', depth: '500', density: '400' },
-      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-animation', { attribute: 'visible', delay: '25000', to: 'true' })
-    )
-  ),
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-plane', { id: 'seafloorCoral', position: '0 -5 0', rotation: '-90 0 0', width: '4', height: '4', color: '#d9d0ae' }),
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-light', { type: 'ambient', intensity: '.1', color: '#fff', position: '0 100 0' }),
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -308,4 +290,4 @@ var App = function (_React$Component) {
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.7f719368.js.map
+//# sourceMappingURL=app.6f6069bc.js.map
