@@ -227,7 +227,7 @@ var _ref = __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
     { position: '0 0 0', color: '#2D9CDB', rotation: '180 180 0' },
     __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
       'a-ocean',
-      { width: '500', depth: '500', density: '400' },
+      { width: '50', depth: '50', density: '40' },
       __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-animation', { attribute: 'visible', delay: '25000', to: 'true' })
     )
   ),
@@ -299,4 +299,4 @@ var App = function (_React$Component) {
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.a68f1bfa.js.map
+//# sourceMappingURL=app.0950f8b6.js.map
