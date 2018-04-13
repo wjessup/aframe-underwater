@@ -211,14 +211,21 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var lock = false;
 
+function setFogOn(o) {
+  console.log(o.object3D);
+  console.log(o.object3D.children[0].children[1].material);
+  o.object3D.children[0].children[1].material.fog = false;
+}
+
 var _ref = __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
   'a-scene',
-  { background: 'color:#2D9CDB; ', fog: 'type: linear; color: #2D9CDB; far:30; ', stats: true, 'keyboard-shortcuts': true, 'vr-mode-ui': true },
+  { background: 'color:#2D9CDB; ', fog: 'type: linear; color: #2D9CDB; far:30;', stats: true, 'keyboard-shortcuts': true, 'vr-mode-ui': true },
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
     'a-assets',
     null,
     __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'lizard', src: './models/lizard/scene.gltf' }),
     __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'octopolice', src: './models/octopolice/scene.gltf' }),
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-asset-item', { id: 'land', src: './models/land/underwater.gltf' }),
     __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { id: 'skybox', src: './img/skybox1.png' })
   ),
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-sky', { material: 'fog: false', position: '0 0 0', src: '#skybox', radius: '250', 'theta-start': '0', 'theta-length': '90' }),
@@ -231,7 +238,16 @@ var _ref = __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
       __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-animation', { attribute: 'visible', delay: '25000', to: 'true' })
     )
   ),
-  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-plane', { id: 'seafloorCoral', position: '0 -5 0', rotation: '-90 0 0', width: '4', height: '4', color: '#d9d0ae' }),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+    'a-entity',
+    { position: '0 0 0', color: '#2D9CDB', rotation: '180 0 0' },
+    __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+      'a-ocean',
+      { width: '500', depth: '500', density: '400' },
+      __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-animation', { attribute: 'visible', delay: '25000', to: 'true' })
+    )
+  ),
+  __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-gltf-model', { id: 'land-model', src: '#land', position: '0 0 0', scale: '20 20 20' }),
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('a-light', { type: 'ambient', intensity: '.1', color: '#fff', position: '0 100 0' }),
   __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
     'a-entity',
@@ -254,6 +270,10 @@ var App = function (_React$Component) {
   }
 
   App.prototype.componentDidMount = function componentDidMount() {
+    var landModel = document.getElementById("land-model");
+    landModel.addEventListener('model-loaded', function () {
+      setFogOn(landModel);
+    });
 
     document.body.onkeyup = function (e) {
       if (e.keyCode == 32) {
@@ -286,8 +306,14 @@ var App = function (_React$Component) {
     //<a-scene fog="type: linear; color: #000; far: 50;">
     //
     //<a-gltf-model id="lizard-model" src="#lizard" position="-15 0 -30" scale="3.0, 3.0, 3.0"></a-gltf-model>
+    //<a-plane id="seafloorCoral" position="0 -5 0" rotation="-90 0 0" width="4" height="4" color="#d9d0ae" ></a-plane>
 
-
+    /*
+    
+    
+    
+    
+            */
     return _ref;
   };
 
@@ -299,4 +325,4 @@ var App = function (_React$Component) {
 /***/ })
 
 },[0]);
-//# sourceMappingURL=app.a68f1bfa.js.map
+//# sourceMappingURL=app.6154a8a2.js.map
